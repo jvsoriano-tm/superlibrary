@@ -20,7 +20,7 @@ def get_config(config_name):
     filepath = "%s/config_files/%s" % (os.getcwd(), config_name)
 
     # INTIALIZE CONFIG PARSER
-    config_file = ConfigParser.ConfigParser()
+    config_file = ConfigParser()
 
     # READ CONFIG FILE
     config_file.read(filepath)
