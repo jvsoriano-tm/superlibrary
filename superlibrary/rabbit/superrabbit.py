@@ -16,7 +16,7 @@ def consume(queue_host, queue_name):
     channel = connection.channel()
     channel.queue_declare(queue=queue_name, durable=True)
     channel.basic_qos(prefetch_count=1)
-    channel.basic_consume(callback, queue=queue_name)
+    channel.basic_consume(queue_name, callback)
     channel.start_consuming()
 
 def insert(queue_host, queue_name, queue_data):
@@ -52,7 +52,7 @@ class Queue(object):
         self.channel = self.connection.channel()
         self.channel.queue_declare(queue=self.queue_name, durable=True)
         self.channel.basic_qos(prefetch_count=1)
-        self.channel.basic_consume(self.callback, queue=self.queue_name)
+        self.channel.basic_consume(self.queue_name, self.callback)
         self.channel.start_consuming()
 
     def send(self, queue_name, data):

@@ -1,7 +1,8 @@
-pika
-ConfigParser
-requests
-simplejson
-boto
-psycopg2
-#MySQLdb
+pika==1.2.1
+ConfigParser==4.0.2
+requests==2.7.0
+certifi==2021.10.8
+simplejson==3.17.6
+boto==2.49.0
+psycopg2==2.8.6
+mysql-connector==2.2.9

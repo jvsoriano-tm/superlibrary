@@ -1,8 +1,9 @@
 #!/usr/bin/python
 
 # AUTHOR: Mildred Cabuyao
+# EDITOR: JV Soriano
 
-import MySQLdb
+import mysql.connector as MySQLdb
 
 def connect_to_mysqldb(host, database, username, password):
 
